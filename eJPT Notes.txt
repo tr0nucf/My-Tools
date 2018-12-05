@@ -72,3 +72,69 @@ OK
 		- Host name
 	Reverse DNS - Ip to Name (If Admin configured)
 	
+	
+	
+3. Web Applicaitons
+	HTTP Basics
+	Stateless - Made staefull by use of cookies on the client side
+	Sessions on the server side. 
+	Client/Server exchange messages
+		Headers\r\n
+		\r\n
+		Message Body\r\n 
+		
+		
+		GET / HTTP/1.1
+		Host: www.elearnsecurity.com
+		User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:31.0) Gecko/20100101 Firefox/31.0 Iceweasel/31.2.0
+		Accept: text/html
+		Accept-Language: en-US,en;q=0.5
+		Accept-Encoding: gzip, deflate
+		Connection: keep-alive
+		
+		HTTP/1.1 200 OK
+		Date: Wed, 19 Nov 2014 10:06:45 GMT
+		Cache-Control: private, max-age=0
+		Content-Type: text/html; charset=UTF-8
+		Content-Encoding: gzip
+		Server: Apache/2.2.15 (CentOS)
+		Content-Length: 99043
+		
+		
+		< PAGE CONTENT > ...
+		
+		Responses
+			200 = OK
+			301 - Moved Permanently
+			302 - Found
+			403 - Forbidden
+			404 - Not Found
+			500 - Internal Server Error
+	HTTPS - protect HTTP by encryption layer
+	
+	SOP - Same Origin Policy
+		Javascript - Must match 
+			Protocol
+			Hostname
+			Port
+			
+			
+	Burp Suite
+		Interceptin proxy
+		
+4. Penetration Testing
+	Lifecycle
+		Find any and every vulnerability with least impact on production systems and servers.
+		
+		
+		Engagement 
+			|
+		Information Gathering  <-----
+			|						|
+		Footprinting and Scanning	|
+			|						|
+		Vulnerability Assessment	|
+			|						|
+		Exploitation  ---------------
+			|
+		Reporting
