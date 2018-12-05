@@ -138,3 +138,29 @@ OK
 		Exploitation  ---------------
 			|
 		Reporting
+		
+	4.1 Engagement
+		Establish
+			- Type (Black, Grey Box)
+			- Time consuming
+			- Complexity of apps/services in scope
+			- Targets
+			Best to establish a sound and targeted proposal
+			Keep in mind the clients needs and infrastructure
+			Should include
+				- Clients needs. Your understanding of what's required. 
+				- The approach and methodology you'd like to use. Automated/manual scanning tools, testing, onsite etc. 
+				- Value analysis. Risks/Benefits
+				- Price and time estimate. 
+				- Penetration test or vulnerability assessment. Remote or onsite. etc. 
+				- Scope of the engagement. IP Addresses, network blocks, domain names. 
+			Legal Work - As a freelance. Different if work for an IT Services company. 
+				NDA
+					What can/can't do. 
+				Insurance 
+				Lawyers
+				Responsibility to keep information private and encrypted. 
+				Rules of Engagement
+					Scope of the engagement, time window, contacts. 
+					
+					
