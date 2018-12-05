@@ -1,3 +1,74 @@
 Testnig out my N++
 
 OK
+
+2 - Networking: 
+	2.1 Protocols
+	
+	ISO/OSI Model
+	Application
+	Presentation
+	Session
+	Transport
+	Network
+	Data Link
+	Physical
+	
+	Reserved IP Addresses
+		0.0.0.0 - 0.255.255.255
+		127.0.0.0 127.255.255.255
+		192.168.0.0 - 194.168.255.255 Class B reserved
+		
+	Routing
+		ip route
+		route print
+	Routers with IP addresses.
+	Switches woh with MAC addresses.  - ARP
+	
+	TCP - Guaranteed delivery
+			Connection Orriented
+			Lower Throughput
+		3-Way Handshake
+		
+			SYN (Seq A, Ack 0)
+			SYN+ACK(Seq B, Ack A+1)
+			ACK (Seq A+2, Ack B+1
+			
+	UDP - Non guarenteed
+			Connectionless. 
+			Better throughput
+	
+	Ports
+		25 - SMTP
+		22 - SSH
+		80 - HTTP
+		110 - POP3
+		143 - IMAP
+		443 - HTTPS
+		137,138,139 - NetBios
+		115 - SFTP
+		23  - Telnet
+		21 - FTP
+		3389 - RDP
+		3309 - MySQL
+		1433 - MS SQL Server
+		
+	Netstat for current TCP connections. 
+	
+	IDS - Check Payload
+		NIDS - Network Intrustion Detection Systems (Typically on Router)
+		HIDS - Host Intrustion Detection Systems (Application logs,file-system etc)
+		
+	IPS - Intrusion Prevention Systems
+		Drop malicious requests. 
+	
+	NAT - reqrites souce IP typcially on Internet connections. Computer must use it as the default gateway. 
+	
+	DNS
+	Convert Name to IP Addresses
+		- Top Level Domain - TLD
+		- Domain 
+		- Sub Domain
+		- Host name
+	Reverse DNS - Ip to Name (If Admin configured)
+	
