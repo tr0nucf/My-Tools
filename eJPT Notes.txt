@@ -163,5 +163,76 @@ OK
 				Responsibility to keep information private and encrypted. 
 				Rules of Engagement
 					Scope of the engagement, time window, contacts. 
+		Information Gathering
+			General Information	(Names and email addresses) Good for social engineering. 
+				Board of Directors
+				Investors
+				Managers and Employees
+				Branch location and addresses. 
+			Infrastructure Information Gathering
+				Transform IP/domain details into servers and Operating Systems
+				WHOIS and DNS Information. 
+				Give meaning to every IP address in scope
+					Live/Not
+					Websites or other services
+						Harvest
+							Domains
+							Subdomains
+							Pages
+							Technologies (PHP, Java, .NET)
+							Frameworks(Drupal, Joomla, Wordpress)
+						Treat web applications as seperate enteties. 
+					What OS
+						No need to target Windows vulnerabilities on Linux hosts. 
+					Helps 
+						Focus efforts
+						Target attacks
+						Sharpen tools for exploitation phase
+		Footprinting and Scanning. 
+			Port scanning
+				nmap
+			Detecting services
+				nmap
+				Find OS, purpose of the IP address. importance of the host. 
+		Vulnerability Assessment
+			Building a list of the vulnerablities present
+			Assessment of each target identified previously. 
+			Manually or via Automated tools. 
+			Automated important to configure based on previous steps. 
+			Automated tools can help carry out a penetration test, but they will not perform a penetration test on their own. 
+		Exploitation
+			Checks and validates a vulnerability
+				Also widens and increases the privilages on the target systems and networks. 
+			Sucessfull exploitation expands the target network. 
+			Repeat theprocess from the information gathering phase
+			Ends when there are no more systems and services in-scope to exploit. 
+			Find any and all vulnerabilities. 
+		Reporting
+			Penetration test report. 
+			Official way to deliver results to:
+				Execs. 
+				IT Staff
+				Development Team
+			Shows and explains the result of the tests and is the actual deliverabile of the engagement. 
+			Must contain. 
+				Techniques used. 
+				Vulnerabilities found
+				Exploits used. 
+				Impact and risk analysis for each vulnerability
+				Remediation tips. 
+			Real value for the client
+			Provides useful suggestions and techniques. Very important. 
+		Consultancy
+			Penetration testsers asked to provide some hours of consultancy after delivering the report. 
+			Additional service. 
+		Keep all engagement details in an encrypted and safe place or destroy it. 
+		
+		Secret of a sucessful test - Picture the systems in scope as a target. 
+			Information gathering and fingerprinting widens the target. 
+			Also called Widening the attack surface. 
+			Targeted attacks are less likely to trigger an alarm in the victims defense system. 
+			
+			
+					
 					
 					
