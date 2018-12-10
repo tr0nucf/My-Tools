@@ -1,5 +1,27 @@
 1 - Information Gathering
 
 1.2 - Open-Source Intelligence (OSINT)
+	Via
+		Social Networks
+			Weakest link Humans
+			Sophisticates atatcks
+			Allows phishing and impersonation attacks and technical maps of systems and technologies. 
+			Linked-In example
+				Advanced search, Specify company, position and location. 
+		Public Sites
+			Crunchbase IT startup database to locate information on founders, employees etc. 
+			Government sites. 
+			Whois
+				Owner name, street address, emaila ddress technical contacts. 
+		Company Websites
+			Products, services, tech, company culture. 
 
+90% of time spent on widening the attach surface
+10% launching the correct commands with the correct tool. 
+
+Cyclic process. 
+
+Penetration test only as strong as your weakest skill. 
+			
+	
 	
