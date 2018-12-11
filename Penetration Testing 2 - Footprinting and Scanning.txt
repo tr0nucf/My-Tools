@@ -10,7 +10,7 @@
 			Linux: fping -a -g range (fping -a -g 200.200.0.0/16 2> /dev/null)
 				-a = Alive
 				-g = sweep instead of standard ping
-			NMAP
+			NMAP (nmap [Scan Type(s)] [Options] {target specification})
 			nmap -sn 200.200.0.0/16
 			nmap -sn -iL hostslist.txt
 				-sn = for a ping sweep.
@@ -20,9 +20,63 @@
 				-PS/PA/PU/PY[postlist]: TCP SYN/ACK, UDP ot SCTP discovery on given ports
 				-PE/PP/PM: ICMP Echo, timestamp, and netmask discovery probes
 				-PO[Protocol list]: IP Procotol Ping
-
-
+				-O <Targets> = Targets for OS Fingerprinting. 
+				--osscan = Limit OS to promising targets only
+				--osscan-guess = Guess OS more aggressively. 
+				-sS = SYN Scan
+				-sV = Version detection scan
+				-sT = TCP Scan. 
+				-p = Ports. 
+				
+				Target selection: 
+					DNS Name
+					IP Address lists
+					CIDR Notation
+					Wildcards
+					Octets lists
+					Input files. 
+						-iL
+						
+				
 	Should have a list of live hosts that are respondong to ping
 	2.2.3 OS Fingerprinting
 		Send network requests and analyze the response, possible because of small differances in the network stack implementations in different OS. 
 		Send a series of specific requests and analyse every bit of the responses creating a signature. 
+		Complete on all network nodes. 
+			Routers
+			Firewalls
+			Hosts
+			Printers
+			etc...
+		Can be done on a traffic capture (passive - p0f) or active using nmap. 
+			E.g. Detect OS on known alive host (nmap -Pn -O <Target>)
+			E.g. To scan 1000's of hosts and limit the response (nmap -O -osscan-limit <targets>)
+			
+2.3  - Port Scanning
+	Discover active darmons and services on nodes. 
+	Find Open ports on targets, also can find software and version. 
+	
+	TCP 3-way handshake
+	 --- SYN --->
+	 <-- SYN/ACK -
+	 --- ACK --->
+	 
+	If trying to connect to a closed port the OS will respond with a [RST/ACK]
+	Every request is logged by teh daemon as it looks like a legitimate connection. Making it easy to detect in logs. 
+		nmap -sT <Target>
+	TCP SYN scans are stealthy by design. Only sends a SYN packet and analyses the response.
+	If the response is a RST = Closed, ACK = Open. if Open scanned sends a RST to stop the handshake.
+	SYN scan cannot be detected in daemon logs. 
+		nmap -sS <Target>
+		
+	Version detection scan. -sV
+	nmap does a TCP connect scan and reads the server banner
+	if no banner then nmap guesses based on the behaviour.
+	
+	Default scans most common ports.
+	-p to define ports. 
+	
+	
+	
+	
+	
