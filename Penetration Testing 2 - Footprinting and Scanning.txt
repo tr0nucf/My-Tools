@@ -27,6 +27,11 @@
 				-sV = Version detection scan
 				-sT = TCP Scan. 
 				-p = Ports. 
+				-p - = All ports
+				-A = more data
+					--version-all 
+				--vv = Verbosity
+				--dd = debug
 				
 				Target selection: 
 					DNS Name
