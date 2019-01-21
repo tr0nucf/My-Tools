@@ -114,5 +114,70 @@ Exploiting Misconfigured Verbs
 			victim.site/shell.php?cmd=cat /etc/passed
 			
 			
+	Misconfigured verbs rare in web servers. Better setup by default. 
+	Common in smart devices, IP cameras. etc. 
+	
+
+	Directories and file enumeration. 
+	Folders not always linked to. But can be found if they are known. 
+	Enumeration helps fild the 'hidden' resources. 
+		Backup and untested features
+		Bbackup files
+		Testing information
+		DEvelopers notes. 
+	Accessing can give unintended information about the system. 
+		Ip Addresses of backend systems etc. 
+	Enumeration by: 
+		Pure brute force - inefficant 
+			Need 287979 trials to get to the word "home"
+		Dictionary attacks. 
+			Use common names and extentions. 
+				E.g. .bak, .old, .txt, .xxx.
+			Takes aprox. 2,000 requests of an entire website. 
+			Enumerating a single resource like /score takes more than 8k requests. 
+			
+	Tool: OWASP Dirbuster
+		
+
+Google Hacking. Aka Google Dorks
+	site:
+		Only for specific site
+	intitle: 
+		Filters acording to title of page
+	inrul: 
+		Filters acording to url
+	filetype:
+		filters to filetype. E.g. .pdf or .xls
+	AND, OR, &, |
+		Combine expression. site:example.com OR site.another.com
+	-
+		Filter out a keyword
+		
+	E.g. 
+		-inurl:(htm|html|php|asp|jsp) intitle:"index of" "last modified" "parent directory" txt OR doc OR pdf
+		Excludes common webpage expressions and looking for open directory indexes containint txt, doc or pdf
+		
+
+Cross Site Scripting (XSS)
+	Vulnerabilty lets an atatcker control some of the content of a web application
+	- Modify the content of a site at run-time
+	- Inject Malicious contents
+	- Steal cookies and thus session of a users. 
+	- Perform actions on web applications as if a legittimate user
+	- And much more!!!
+	
+	Actors Involved
+		Vulnerable Application
+			XSS happens when a web application uses unfiltererd user input to build the output displayed. 
+			Lets attacker control the output HTML and JavaScript code
+			user input is any parameter coming from the client side. 
+				E.g. Request Headers, Cookies, Form Inputs, POST Parameters, GET Parameters. 
+				
+		Victim User (Visitor)
+		The Penetration Tester
+		
+	
+		
+				
 		
 		
